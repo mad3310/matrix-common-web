@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.le.matrixframework</groupId>
+    <artifactId>matrix-common-web</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>jar</packaging>
+
+    <name>matrix-common-web</name>
+    <url>http://maven.apache.org</url>
+    <description>
+        服务common包维护
+    </description>
+    <organization>
+        <name>LeCloud Software, Inc.</name>
+        <url>http://lecloud.com/</url>
+    </organization>
+    <scm>
+        <url>http://git.letv.cn/le_matrix/matrix-common-web.git</url>
+    </scm>
+    <prerequisites>
+        <!--maven版本限制-->
+        <maven>3.0.0</maven>
+    </prerequisites>
+
+    <developers>
+        <developer>
+            <id>linzhanbo</id>
+            <name>linzhanbo</name>
+            <email>linzhanbo@le.com</email>
+            <organization>LeCloud Software, Inc.</organization>
+            <organizationUrl>http://lecloud.com/</organizationUrl>
+            <roles>
+                <role>Project lead</role>
+            </roles>
+        </developer>
+        <developer>
+            <id>lisuxiao</id>
+            <name>lisuxiao</name>
+            <email>lisuxiao@letv.com</email>
+            <organization>LeCloud Software, Inc.</organization>
+            <organizationUrl>http://lecloud.com/</organizationUrl>
+            <roles>
+                <role>Project lead</role>
+            </roles>
+        </developer>
+    </developers>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+    <dependencies>
+    </dependencies>
+    <build>
+        <finalName>matrix-common-web</finalName>
+        <plugins>
+            <!--jdk版本>=1.7-->
+            <!--dubbox 需要在JDK 1.7以上运行-->
+            <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.1</version>
+                <configuration>
+                    <source>1.7</source>
+                    <target>1.7</target>
+                </configuration>
+            </plugin>
+        </plugins>
+        <pluginManagement>
+            <plugins>
+                <!--<plugin>
+                  <artifactId>maven-antrun-plugin</artifactId>
+                  <version>1.3</version>
+                </plugin>
+                <plugin>
+                  <artifactId>maven-assembly-plugin</artifactId>
+                  <version>2.2-beta-5</version>
+                </plugin>
+                <plugin>
+                  <artifactId>maven-dependency-plugin</artifactId>
+                  <version>2.8</version>
+                </plugin>
+                <plugin>
+                  <artifactId>maven-release-plugin</artifactId>
+                  <version>2.3.2</version>
+                </plugin>-->
+            </plugins>
+        </pluginManagement>
+    </build>
+    <!--私有仓库配置  begin-->
+    <repositories>
+        <!--私有仓库 url-->
+        <repository>
+            <id>Matrix-Thirdparty repository</id>
+            <name>Letv.com Repository</name>
+            <url>http://maven.letv.cn/nexus/content/repositories/Matrix-Thirdparty/</url>
+        </repository>
+        <repository>
+            <id>Matrix-Snapshot repository</id>
+            <name>Letv.com Repository</name>
+            <url>http://maven.letv.cn/nexus/content/repositories/Matrix-Snapshot/</url>
+        </repository>
+        <repository>
+            <id>Matrix-Release repository</id>
+            <name>Letv.com Repository</name>
+            <url>http://maven.letv.cn/nexus/content/repositories/Matrix-Release/</url>
+        </repository>
+        <repository>
+            <id>letv.public repository</id>
+            <name>Letv.com Repository</name>
+            <url>http://maven.letv.cn/nexus/content/groups/public/</url>
+        </repository>
+    </repositories>
+    <!--私有仓库配置  end-->
+    <!--私有插件配置 begin-->
+    <pluginRepositories>
+        <!--私有仓库插件 url-->
+        <pluginRepository>
+            <id>letv.public plugin</id>
+            <name>Letv.com Repository</name>
+            <url>http://maven.letv.cn/nexus/content/groups/public/</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </pluginRepository>
+    </pluginRepositories>
+    <!--deploy begin-->
+    <distributionManagement>
+        <!--deploy url-->
+        <repository>
+            <id>project-release</id>
+            <name>Projects Release repository</name>
+            <url>http://maven.letv.cn/nexus/content/repositories/Matrix-Release/</url>
+        </repository>
+        <snapshotRepository>
+            <id>project-snapshots</id>
+            <name>Projects SnapShot repository</name>
+            <url>http://maven.letv.cn/nexus/content/repositories/Matrix-Snapshot/</url>
+        </snapshotRepository>
+    </distributionManagement>
+    <!--deploy end-->
+</project>
